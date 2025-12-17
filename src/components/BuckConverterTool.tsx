@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import 'katex/dist/katex.min.css';
-import { InlineMath, BlockMath } from 'react-katex';
+import { BlockMath } from 'react-katex';
 
 // 变化点 1：因为大家都在 components 文件夹里了，所以去掉 "./components/" 前缀，直接引用同级文件
 import { InputField } from './InputField';
