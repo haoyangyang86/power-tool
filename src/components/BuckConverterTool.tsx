@@ -43,6 +43,9 @@ const BuckConverterTool: React.FC = () => {
           <div className="text-sm space-y-4 text-gray-700">
             <div>
               <p>输入电感值公式 (L):</p>
+              <p style={{ fontSize: 12, opacity: 0.7 }}>
+  build: 2025-12-17-1
+</p>
               <BlockMath math={"L = \\frac{V_{out} \\cdot (1 - V_{out}/V_{in})}{F \\cdot K \\cdot I_{out}}"} />
             </div>
             <div>
