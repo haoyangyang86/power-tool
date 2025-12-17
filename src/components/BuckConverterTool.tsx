@@ -42,18 +42,23 @@ const BuckConverterTool: React.FC = () => {
           <h3 className="font-semibold text-gray-700 border-b pb-2">设计公式</h3>
           <div className="text-sm space-y-4 text-gray-700">
             <div>
-                <p>输入电感值公式 (L):</p>
-                <BlockMath math="L = \\frac{V_{out} \\cdot (1 - V_{out}/V_{in})}{F \\cdot K \\cdot I_{out}}" />
-            </div>
-            <div>
-                <p>纹波电流公式 (Ripple Current):</p>
-                <BlockMath math="\\Delta I_L = \\frac{V_{out} \\cdot (1 - D)}{F \\cdot L}" />
-            </div>
-            <div>
-                <p>输入功率估算 (Input Power):</p>
-                <BlockMath math="P_{in} = \\frac{V_{out} \cdot I_{out}}{\eta}" />
-            </div>
-          </div>
+    <p>输入电感值公式 (L):</p>
+    {/* 使用 String.raw 就不需要双反斜杠了，且必须检查 frac 后面有没有花括号 {} */}
+    <BlockMath math={String.raw`L = \frac{V_{out} \cdot (1 - V_{out}/V_{in})}{F \cdot K \cdot I_{out}}`} />
+</div>
+
+{/* 2. 纹波电流公式 */}
+<div>
+    <p>纹波电流公式 (Ripple Current):</p>
+    <BlockMath math={String.raw`\Delta I_L = \frac{V_{out} \cdot (1 - D)}{F \cdot L}`} />
+</div>
+
+{/* 3. 输入功率公式 */}
+<div>
+    <p>输入功率估算 (Input Power):</p>
+    <BlockMath math={String.raw`P_{in} = \frac{V_{out} \cdot I_{out}}{\eta}`} />
+  </div>
+          </div>  
         </div>
       </div>
 
